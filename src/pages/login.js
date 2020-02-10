@@ -4,14 +4,17 @@ import EdtUsername from "../components/login/EdtUsername";
 import EdtPassword from "../components/login/EdtPassword";
 import BtnLogin from "../components/login/BtnLogin";
 
-function Login(props) {
+function Login({navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.materialMessageTextboxStack}>
         <EdtUsername style={styles.materialMessageTextbox}></EdtUsername>
         <EdtPassword style={styles.materialMessageTextbox1}></EdtPassword>
       </View>
-      <BtnLogin style={styles.materialButtonViolet}></BtnLogin>
+      <BtnLogin 
+      style={styles.materialButtonViolet} 
+      onPress={() => navigation.navigate('Home')}>
+      </BtnLogin>
       <StatusBar
         animated={false}
         hidden={false}
