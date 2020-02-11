@@ -1,34 +1,25 @@
-import{createAppContainer} from 'react-navigation';
-import{createStackNavigator} from 'react-navigation-stack';
+import {createAppContainer, createStackNavigator} from 'react-navigation';
+// import {createStackNavigator} from 'react-navigation-stack';
 import Login from './pages/login';
 import Home from './pages/home';
 
-const Router = createAppContainer(
-                createStackNavigator({
-    Login:{
-        screen: Login,
-        
-    },
-    Home:{
-        screen:Home,
-        navigationOptions:{
-        title: "Início",
-        }
-    },
-
-    },
-
+const Routes = createAppContainer(
+  createStackNavigator(
     {
-defautNavigationOptions:{
-    headerTintColor:"#fff",
-    headerBackTitleVisible: false,
-    headerStyle:{
-        backgroundColor:"#3F51B5"
-    }
-}
-    }
-    )
+      Login: Login,
+      Home: Home,
+    },
 
+    // {
+    //   defautNavigationOptions: {
+    //     headerTintColor: '#fff',
+    //     headerBackTitleVisible: false,
+    //     // headerStyle: {
+    //     //   backgroundColor: '#3F51B5',
+    //     // },
+    //   },
+    // },
+  ),
 );
 
-export default Router;
+export default Routes;
